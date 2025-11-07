@@ -50,16 +50,39 @@ const users = [
 ]
 
 users[1].email
-console.log(tinderUser);
+// console.log(tinderUser);
 
-console.log(Object.keys(tinderUser));
-console.log(Object.values(tinderUser));
-console.log(Object.entries(tinderUser));
+// console.log(Object.keys(tinderUser));
+// console.log(Object.values(tinderUser));
+// console.log(Object.entries(tinderUser));
 // Object.keys() method returns an array of a given object's own property names, in the same order as we get with a normal loop.
 // Object.values() method returns an array of a given object's own enumerable property values, in the same order as that provided by a for...in loop.
 // Object.entries() method returns an array of a given object's own enumerable string-keyed property [key, value] pairs.
 
 // it shows the key value pairs in array format and while working with databases it will be easier for us to work with it and use loops to read and get the values using all the array properties and methods.
 
-console.log(tinderUser.hasOwnProperty('isLoggedIn'));
+// console.log(tinderUser.hasOwnProperty('isLoggedIn'));
 // determines whether an object has a property with the specified name. It returns true or false as appropriate. Helps in preventing errors while accessing properties that may not exist.
+
+
+const course = {
+    coursename: "JavaScript",
+    price: "999",
+    courseInstructor: "Ashu"
+}
+
+// const {courseInstructor} = course; // object destructuring
+// console.log(courseInstructor);
+// Object destructuring allows us to extract properties from an object and assign them to variables in a more concise way without having to access each property individually.
+
+const {courseInstructor: instructor} = course; // renaming while destructuring
+// console.log(instructor);
+
+//! Json
+// {
+//     "courseInstructor": "Ashu",
+//     "courseName": "JavaScript",
+//     "price": 999,
+//     "isAvailable": true
+// }
+
