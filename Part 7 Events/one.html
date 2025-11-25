@@ -68,19 +68,29 @@
     //     e.stopPropagation(); // stops the propagation (no bubbling)
     // }, false) 
 
-    // document.getElementById('google').addEventListener('click', function(e){
-    //     // console.log("google clicked");
-    //     e.preventDefault();
-    //     e.stopPropagation();
+    document.getElementById('google').addEventListener('click', function(e){
+        // console.log("google clicked");
+        e.preventDefault();
+        // e.stopPropagation();
+    }, false)
+
+    // document.querySelector('#images').addEventListener('click', function(e){
+    //     // console.log(e.target); // shows what is being clicked or accessed
+    //     console.log(e.target.parentNode)
+    //     let removeIt = e.target.parentNode
+    //     // removeIt.parentNode.removeChild(removeIt) //access the child element from the parent element
+    //     removeIt.remove(); // removes the element
+
     // }, false)
 
     document.querySelector('#images').addEventListener('click', function(e){
-        // console.log(e.target); // shows what is being clicked or accessed
-        console.log(e.target.parentNode)
-        let removeIt = e.target.parentNode
-        // removeIt.remove(); // removes the element
-        removeIt.parentNode.removeChild(removeIt)
-    }, false)
+        console.log(e.target.tagName);
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode;
+            removeIt.remove();
+        }
+    })
 
 </script>
 </html>
