@@ -47,16 +47,40 @@
     //     console.log(e); //gives brower events and environment
     // }, false) //false for event bubbling (event propagation) and true for event capturing
 
-    document.getElementById('images').addEventListener('click', function(e){
-        console.log('clicked inside the ul');
-    }, false)
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     // console.log('clicked inside the ul');
+    // }, false)
 
-    document.getElementById('owl').addEventListener('click', function(e){
-        console.log('clicked the owl');
-    }, false) 
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log('clicked the owl');
+    // }, false) 
     // first clicked the owl -> then -> clicked inside the ul
-    // its all part of event propagation 
+    // its all part of event propagation which is part of bubbling
+    // as bubbles move from bottom to top, similarly the tracking of event from inside to outside (from small to big) is called event propagation and it will start with the inside value first then it will move to the outside value
 
+    // document.getElementById('japan').addEventListener('click', function(e){
+    //     console.log('clicked on Japan');
+    // }, true) 
+    // this is called event capturing, it moves from top to bottom (from outside to inside)
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     // console.log('clicked the owl');
+    //     e.stopPropagation(); // stops the propagation (no bubbling)
+    // }, false) 
+
+    // document.getElementById('google').addEventListener('click', function(e){
+    //     // console.log("google clicked");
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    // }, false)
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        // console.log(e.target); // shows what is being clicked or accessed
+        console.log(e.target.parentNode)
+        let removeIt = e.target.parentNode
+        // removeIt.remove(); // removes the element
+        removeIt.parentNode.removeChild(removeIt)
+    }, false)
 
 </script>
 </html>
