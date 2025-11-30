@@ -21,4 +21,5 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
 document.querySelector('.forgot-password').addEventListener('click', function(e) {
     e.preventDefault();
     alert("Your reset link has been sent to your email");
+    document.getElementById('loginForm').reset();
 });
